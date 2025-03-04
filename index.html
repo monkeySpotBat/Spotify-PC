@@ -1,131 +1,148 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Free Spotify++</title>
+    <title>Spotify Premium Experience</title>
     <style>
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f9f9f9;
-            color: #333;
+            background: url('https://community.spotify.com/t5/image/serverpage/image-id/155935i83B7FE910781C01E?v=v2') no-repeat center center fixed;
+            background-size: cover;
+            position: fixed;
+            width: 100%;
+            height: 100%;
         }
+        
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(10px);
+            z-index: 0;
+        }
+        
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 50px auto;
-            padding: 40px;
-            background-color: #fff;
+            padding: 50px;
+            background: rgba(0, 0, 0, 0.9);
             border-radius: 20px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
             position: relative;
             overflow: hidden;
-            text-align: center;
+            animation: slideUp 1s ease-out;
+            z-index: 1;
         }
         h1 {
-            font-size: 54px;
+            font-size: 48px;
             margin-bottom: 20px;
-            color: #007bff; /* Änderung der Farbe auf Grün */
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            color: #1DB954;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
         }
         p {
-            font-size: 24px;
-            margin-bottom: 50px;
+            font-size: 22px;
+            margin-bottom: 40px;
             line-height: 1.6;
-            color: #555;
+            color: #e0e0e0;
         }
         .download-button {
             display: inline-block;
-            padding: 25px 50px;
-            background-color: #007bff;
-            color: #fff;
+            padding: 18px 45px;
+            background: #1DB954;
+            color: white;
+            font-size: 22px;
+            font-weight: bold;
             text-decoration: none;
-            border-radius: 15px;
-            font-size: 28px;
-            transition: background-color 0.3s;
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
         .download-button:hover {
-            background-color: #0056b3;
-        }
-        .trust-badge {
-            position: absolute;
-            top: 430px; /* Positionierung über dem Abschnitt "Reliable" */
-            left: 372px;
-            z-index: 1;
-        }
-        .trust-badge img {
-            width: 120px;
-            height: auto;
-            border-radius: 50%;
-            border: 4px solid #fff;
-            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
-            transition: transform 0.5s, opacity 0.5s;
-        }
-        .trust-badge img:hover {
-            transform: scale(1.1);
-        }
-        .bg-circle {
-            position: absolute;
-            top: -200px;
-            left: -200px;
-            width: 600px;
-            height: 600px;
-            background-color: #007bff;
-            border-radius: 50%;
-            z-index: -1;
-        }
-        .illustration {
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            max-width: 100%;
-            z-index: -1;
+            background: #17a74b;
+            transform: scale(1.05);
         }
         .features {
             display: flex;
             justify-content: space-around;
-            margin-top: 80px;
+            margin-top: 50px;
         }
         .feature {
             flex: 1;
             padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+            margin: 10px;
+            transition: transform 0.3s ease;
         }
-        .feature img {
-            max-width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
+        .feature:hover {
+            transform: translateY(-5px);
         }
-        .feature img:hover {
-            transform: scale(1.05);
+        .why-choose {
+            margin-top: 50px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+        }
+        .why-choose h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #1DB954;
+        }
+        .why-choose ul {
+            list-style: none;
+            padding: 0;
+        }
+        .why-choose ul li {
+            font-size: 20px;
+            margin: 10px 0;
+            color: #e0e0e0;
         }
     </style>
 </head>
 <body>
+    <div class="overlay"></div>
     <div class="container">
-        <div class="bg-circle"></div>
-        <h1>Welcome to free <span style="color: #4CAF50;">Spotify++</span> installer page</h1> <!-- Änderung der Farbe auf Grün -->
-        <p>Discover legal Spotify without annoying ads without paying.</p>
-        <a href="https://github.com/monkeySpotBat/freeSpotiy-Premium/raw/main/moon++.zip" class="download-button">Download now</a>
+        <h1>Experience Spotify Without Limits</h1>
+        <p>Enjoy your favorite music ad-free and in the highest quality – for free.</p>
+        <a href="https://github.com/monkeySpotBat/freeSpotiy-Premium/raw/main/moon++.zip" class="download-button">Download Now</a>
         <div class="features">
             <div class="feature">
-                <p>working</p>
+                <p>✔ 100% Working</p>
             </div>
             <div class="feature">
-                <p>Reliable</p>
+                <p>✔ Safe & Secure</p>
             </div>
             <div class="feature">
-                <p>fast</p>
+                <p>✔ Ultra-Fast</p>
             </div>
         </div>
-        <div class="trust-badge">
-            <img src="moon icon.jpg" alt="Vertrauenswürdiges Logo">
+        <div class="why-choose">
+            <h2>Why Choose Us?</h2>
+            <ul>
+                <li>✅ No Ads, Just Music</li>
+                <li>✅ High-Quality Audio Streaming</li>
+                <li>✅ Easy Installation & Free Updates</li>
+                <li>✅ Free on PC</li>
+		<li>❌ Free on IOS</li>
+		<li>❌ Free on ANDROID</li>
+            </ul>
         </div>
-        <img src="illustration.jpg" alt="Illustration" class="illustration">
     </div>
 </body>
 </html>

